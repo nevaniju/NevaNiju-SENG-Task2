@@ -2,8 +2,8 @@
 
 body {
   margin: 0;
-  background-color: #1b1b1b;
-  color: #ccc;
+  background-color: #E8EDDF;
+  color: #242423;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   align-items: center;
@@ -16,6 +16,10 @@ body {
   position: relative;
   width: 80%;
   max-width: 900px;
+  background: #CFDBD5;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(36, 36, 35, 0.1);
 }
 
 .words {
@@ -23,24 +27,26 @@ body {
   line-height: 3rem;
   word-wrap: break-word;
   max-height: 40vh;
+  color: #242423;
 }
 
 .char.correct {
-  color: #fff;
+  color: #242423;
+  font-weight: bold;
 }
 
 .char.incorrect {
-  color: #ff5555;
+  color: #ff5c5c;
 }
 
 .char.active {
-  border-left: 2px solid #ffd700;
+  border-left: 2px solid #F5CB5C;
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
   0%, 100% { border-color: transparent; }
-  50% { border-color: #ffd700; }
+  50% { border-color: #F5CB5C; }
 }
 
 #hidden-input {
@@ -51,5 +57,5 @@ body {
 .stats {
   margin-top: 20px;
   font-size: 1.2rem;
-  color: #999;
+  color: #333533;
 }
