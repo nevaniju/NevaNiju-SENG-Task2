@@ -1,71 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #E8EDDF;
-    color: #242423;
-    font-family: 'JetBrains Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #E8EDDF;
+  color: #242423;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #CFDBD5;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(36, 36, 35, 0.1);
+  background-color: #CFDBD5;
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(36, 36, 35, 0.15);
+  text-align: center;
+  max-width: 700px;
+  width: 90%;
 }
 
 .title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    font-weight: 600;
-    color: #242423;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #242423;
 }
 
 .cursor {
-    font-size: 4rem;
-    font-weight: 600;
-    margin-left: 5px;
-    animation: blink 0.6s infinite;
-    color: #F5CB5C;
+  font-size: 7rem;
+  margin-left: 5px;
+  animation: blink 0.6s step-end infinite;
+  color: #F5CB5C;
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+  50% { opacity: 0; }
 }
 
 #slogan {
-    font-size: 1.4rem;
-    margin-top: 0;
-    font-weight: 500;
-    color: #333533;
+  font-size: 1.2rem;
+  margin: 10px 0 30px;
+  color: #333533;
+  line-height: 1.4;
 }
 
-button {
-    padding: 12px 28px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #F5CB5C;
-    color: #242423;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-    transition: background-color 0.2s, color 0.2s;
+.start-button {
+    font-family: 'Roboto Mono', monospace;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #F5CB5C;
+  color: #242423;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #e6b94a;
+.start-button:hover {
+  background-color: #e6b94a;
+  transform: translateY(-2px);
+}
+
+.start-link {
+  text-decoration: none;
 }
