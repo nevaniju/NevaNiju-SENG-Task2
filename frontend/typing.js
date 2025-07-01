@@ -16,7 +16,7 @@ let countdownInterval;
 let currentChars = [];
 const wordCount = 50;
 
-let selectedTime = 60; // Default to 1 minute
+let selectedTime = 60; 
 let timeLeft = selectedTime;
 
 const wordsContainer = document.getElementById("words-container");
@@ -92,17 +92,13 @@ function endTest() {
   clearInterval(countdownInterval);
   const stats = calculateStats();
 
-  alert(`Time's up!\nWPM: ${stats.wpm}\nAccuracy: ${stats.accuracy}%`);
-
-  // TODO: Send stats to backend
-  // Example:
-  /*
   fetch('/savestats', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(stats)
+    body: JSON.stringify({ wpm: stats.wpm, accuracy: stats.accuracy, duration: selectedTime })
   });
-  */
+
+  alert(`Time's up!\nWPM: ${stats.wpm}\nAccuracy: ${stats.accuracy}%`);
 }
 
 hiddenInput.addEventListener("input", () => {
@@ -141,7 +137,6 @@ hiddenInput.addEventListener("input", () => {
   hiddenInput.value = "";
 });
 
-// Always refocus the hidden input
 document.addEventListener("click", () => hiddenInput.focus());
 document.addEventListener("keydown", () => hiddenInput.focus());
 
