@@ -293,3 +293,18 @@ form {
         font-size: 30px;
     }
 }
+
+.password-rules {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 13px;
+  }
+  .password-rules p {
+    margin: 2px 0;
+    color: #a00;
+  }
+  .password-rules p.valid {
+    color: #0a0;
+    text-decoration: line-through;
+  }
+  
