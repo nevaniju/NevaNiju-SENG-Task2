@@ -59,3 +59,25 @@ body {
   font-size: 1.2rem;
   color: #333533;
 }
+
+.restart-button {
+  font-family: 'Roboto Mono', monospace;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #F5CB5C;
+  color: #242423;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.restart-button:hover {
+  background-color: #e6b94a;
+  transform: translateY(-2px);
+}
+
+.restart-link {
+  text-decoration: none;
+}
