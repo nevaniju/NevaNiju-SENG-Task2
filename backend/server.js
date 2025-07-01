@@ -14,7 +14,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error("❌ Failed to connect to database:", err.message);
   } else {
-    console.log("✅ Connected to the SQLite database.");
+    console.log(" Connected to the SQLite database.");
   }
 });
 
@@ -73,7 +73,7 @@ app.post("/register", async (req, res) => {
           return res.send("❌ Something went wrong.");
         }
         req.session.username = username;
-        res.redirect("/typing.html");
+        return res.send(`<script>window.location.href = "/typing.html";</script>`);
       });
   });
 });
@@ -96,8 +96,9 @@ app.post("/login", (req, res) => {
     if (match) {
       db.run(`UPDATE users SET failed_attempts = 0, lockout_time = 0 WHERE username = ?`, [username]);
       req.session.username = username;
-      res.redirect("/typing.html");
-    } else {
+      res.send(`<script>window.location.href = "/typing.html";</script>`);
+    }
+     else {
       const attempts = user.failed_attempts + 1;
       const lockout = attempts >= 5 ? now + 5 * 60 * 1000 : user.lockout_time;
       db.run(`UPDATE users SET failed_attempts = ?, lockout_time = ? WHERE username = ?`, [attempts, lockout, username]);
@@ -119,7 +120,7 @@ app.post("/savestats", (req, res) => {
       [row.id, wpm, accuracy, duration],
       err => {
         if (err) return res.send("❌ Failed to save stats.");
-        res.send("✅ Stats saved.");
+        res.send(" Stats saved.");
       });
   });
 });
@@ -145,5 +146,5 @@ app.get("/logout", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(` Server running at http://localhost:${PORT}`);
 });
