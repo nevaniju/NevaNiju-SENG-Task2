@@ -8,10 +8,22 @@
 </head>
 <body>
   <div class="stats-container">
+    <div class="top-bar">
+      <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
     <h1>My Typify Stats</h1>
+
+    <div class="best-stats">
+      <strong>Best WPM:</strong> <span id="best-wpm">-</span> &nbsp; | &nbsp;
+      <strong>Best Accuracy:</strong> <span id="best-accuracy">-</span>
+    </div>
+
     <div id="stats-list"></div>
+
     <a class="back-button" href="typing.html">Back to Test</a>
   </div>
+
   <script src="stats.js"></script>
 </body>
 </html>
