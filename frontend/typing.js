@@ -141,3 +141,9 @@ document.addEventListener("click", () => hiddenInput.focus());
 document.addEventListener("keydown", () => hiddenInput.focus());
 
 startTest();
+
+function logout() {
+  fetch('/logout')
+    .then(() => window.location.href = "/loginsignup.html");
+}
+
