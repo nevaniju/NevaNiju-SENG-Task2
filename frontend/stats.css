@@ -45,3 +45,36 @@ h1 {
   border-radius: 8px;
   font-weight: bold;
 }
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.logout-button {
+  background-color: #F5CB5C;
+  color: #242423;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #e6b94a;
+  transform: translateY(-2px);
+}
+
+.best-stats {
+  background: #E8EDDF;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
