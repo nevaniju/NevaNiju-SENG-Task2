@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="form-box login">
-      <form action="/login" method="POST">
+      <form action="/login" method="POST" id="login-form">
         <h1>Login</h1>
         <div class="input-box">
           <input type="text" name="username" placeholder="Username" required> 
@@ -23,12 +23,14 @@
           <input type="password" name="password" placeholder="Password" required> 
           <i class="fa-solid fa-lock"></i>
         </div>
+        <p class="error-message" id="login-error"></p>
+        <p id="lockout-countdown" class="error-message"></p>
         <button type="submit" class="btn">Login</button>
       </form>
     </div>
 
     <div class="form-box register">
-      <form action="/register" method="POST">
+      <form action="/register" method="POST" id="register-form">
         <h1>Registration</h1>
         <div class="input-box">
           <input type="text" name="username" placeholder="Username" required>
@@ -48,6 +50,7 @@
           <p id="number" class="invalid">At least one number</p>
           <p id="special" class="invalid">At least one special character</p>
         </div>
+        <p class="error-message" id="register-error"></p>
         <button type="submit" class="btn">Register</button>
       </form>
     </div>

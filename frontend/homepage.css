@@ -11,8 +11,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 20px; 
 }
 
 .container {
@@ -22,13 +23,14 @@ body {
   box-shadow: 0 12px 24px rgba(36, 36, 35, 0.15);
   text-align: center;
   max-width: 700px;
-  width: 90%;
+  width: 100%;
 }
 
 .title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap; 
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 16px;
@@ -54,7 +56,7 @@ body {
 }
 
 .start-button {
-    font-family: 'Roboto Mono', monospace;
+  font-family: 'JetBrains Mono', monospace;
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
@@ -73,4 +75,51 @@ body {
 
 .start-link {
   text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  .title-wrapper {
+    font-size: 2.5rem;
+  }
+
+  .cursor {
+    font-size: 5rem;
+  }
+
+  #slogan {
+    font-size: 1rem;
+    margin: 10px 0 20px;
+  }
+
+  .start-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-wrapper {
+    font-size: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cursor {
+    font-size: 4rem;
+    margin-left: 0;
+  }
+
+  #slogan {
+    font-size: 0.95rem;
+  }
+
+  .start-button {
+    width: 100%;
+    font-size: 1rem;
+  }
 }

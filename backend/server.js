@@ -47,7 +47,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Register
-app.post("/register", async (req, res) => {
+app.post("/register", express.json(), async (req, res) => {
   const { username, email, password } = req.body;
   if (!username || !email || !password) return res.send("❌ All fields required.");
   const hashed = await bcrypt.hash(password, 10);
@@ -63,8 +63,8 @@ app.post("/register", async (req, res) => {
       [username, email, hashed],
       function (err) {
         if (err) {
-          if (err.message.includes("users.email")) return res.send("❌ Email already registered.");
-          if (err.message.includes("users.username")) return res.send("❌ Username taken.");
+          if (err.message.includes("users.email") || err.message.includes("users.username"))
+            return res.send("❌ Username or email taken.");
           return res.send("❌ Something went wrong.");
         }
         req.session.username = username;
@@ -74,7 +74,7 @@ app.post("/register", async (req, res) => {
 });
 
 // Login
-app.post("/login", (req, res) => {
+app.post("/login", express.json(), (req, res) => {
   const { username, password } = req.body;
   db.get(`SELECT * FROM users WHERE username=?`, [username], async (err, user) => {
     if (err) return res.send("❌ DB error.");
@@ -98,6 +98,7 @@ app.post("/login", (req, res) => {
     }
   });
 });
+
 
 // Save stats
 app.post("/savestats", (req, res) => {

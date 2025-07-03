@@ -308,3 +308,10 @@ form {
     text-decoration: line-through;
   }
   
+
+.error-message {
+    color: #a00;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+    
